@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:_4M_24_suwa"
+             x:Class="_4M_24_suwa.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="16" Padding="16">
+            <ListView
+                x:Name="listView"
+                ItemsSource="{x:Static local:Uczniowie.uczniowie}"/>
+            <Slider 
+                Minimum="16" 
+                Maximum="100" 
+                x:Name="sldHello"
+                BindingContext="{x:Reference lblHello}"
+                Value="{Binding FontSize, Mode=TwoWay}"/>
+            <Entry
+                Placeholder="Podaj wartość"
+                BindingContext="{x:Reference lblHello}"
+                Text="{Binding Text, Mode=TwoWay}"/>
+            <Label 
+                Text="Hello World"
+                x:Name="lblHello"
+                FontSize="18"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
